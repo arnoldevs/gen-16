@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lobster&display=swap");
+
+body * {
+	font-family: "Cabin", sans-serif;
+}
+
+nav .main-logo,
+footer .main-logo {
+	font-family: "Lobster", sans-serif;
+	font-size: 2.3125rem;
+}
+
+section .main-logo {
+	font-family: "Lobster", sans-serif;
+	font-size: 1.875rem;
+}
+
+.time-portions,
+.ingredients,
+.preparation {
+	font-size: 1.25rem;
+}
+
+.ingredients,
+.preparation {
+	text-decoration: underline;
+	/* text-decoration-thickness: 0.1rem; */
+	text-underline-offset: 0.5rem;
+}
+
+h5 {
+	font-size: 1.4375rem;
+}
+
+.button-color {
+	background-color: white !important;
+}
+
+.circle-indicator {
+	width: 0.75rem !important;
+	height: 0.75rem !important;
+	border-radius: 50% !important;
+}
+
+/* Se me está generando un margen derecho que no puedo sacar, con las siguientes propiedades solo se soluciona a medias el problema */
+
+/* #nav,
+#newsletter,
+#footer {
+	width: 100vw;
+}
+
+body{
+	width: 100%;
+} */
