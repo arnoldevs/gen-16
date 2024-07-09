@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lobster&display=swap");
+
+body * {
+	font-family: "Cabin", sans-serif;
+}
+
+nav .main-logo,
+footer .main-logo {
+	font-family: "Lobster", sans-serif;
+	font-size: 2.3125rem;
+}
+
+section .main-logo {
+	font-family: "Lobster", sans-serif;
+	font-size: 1.875rem;
+}
+
+.time-portions,
+.ingredients,
+.preparation {
+	font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.ingredients,
+	.preparation {
+		text-decoration: underline;
+		text-underline-offset: 0.7rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.ingredients,
+	.preparation {
+		text-decoration: none;
+	}
+}
+
+h5 {
+	font-size: 1.4375rem;
+}
+
+.button-color {
+	background-color: white !important;
+}
+
+.circle-indicator {
+	width: 0.75rem !important;
+	height: 0.75rem !important;
+	border-radius: 50% !important;
+}
+
+.ingredients-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.preparation-list {
+	padding: 1rem;
+}
+
+.preparation-list li {
+	margin-bottom: 1.5rem;
+}
+
+.relatedRecipes .card {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+hr{
+	
+}
