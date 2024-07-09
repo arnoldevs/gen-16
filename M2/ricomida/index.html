@@ -58,18 +58,21 @@
 			</div>
 		</nav>
 
-		<article>
+		<article class="container">
+			<hr class="d-md-none" />
 			<div class="row text-uppercase">
-				<div class="col-sm-12 col-md-6">
+				<div class="col-sm-12 col-md-6 my-md-5">
 					<img class="img-fluid" src="./assets/img/principal.jpg" alt="" />
 				</div>
-				<div class="col-sm-12 col-md-6 flex-column">
-					<h1 class="display-6">
+				<div class="col-sm-12 col-md-6 text-center text-md-start my-md-5">
+					<h1 class="display-6 my-4 fw-bold">
 						Pizza al estilo Chicago con espinacas y champiñones
 					</h1>
 					<hr />
-					<span class="time-portions">110 Min / 6 a 8 porciones</span>
-					<div class="d-grid gap-4 d-md-flex justify-content-md-start">
+					<span class="time-portions fw-bold">110 Min / 6 a 8 porciones</span>
+					<div
+						class="d-grid gap-4 d-flex justify-content-center justify-content-md-start my-4"
+					>
 						<button
 							id="sendMail"
 							type="button"
@@ -96,7 +99,7 @@
 			<div class="row d-none d-md-block">
 				<div
 					id="carouselExampleControls"
-					class="carousel slide p-5"
+					class="carousel slide pb-5"
 					data-bs-ride="carousel"
 				>
 					<div class="carousel-indicators">
@@ -186,13 +189,15 @@
 				</div>
 			</div>
 
-			<hr />
+			<hr class="d-none d-md-block" />
 
 			<section class="row">
 				<div class="col-sm-12 col-md-6">
-					<span class="text-uppercase ingredients">Ingredientes</span>
-					<ul>
-						<li>Masa</li>
+					<span class="text-uppercase ingredients my-4 d-block fw-bold"
+						>Ingredientes</span
+					>
+					<ul class="ingredients-list">
+						<li class="my-4">Masa</li>
 						<li>20 gr de levadura seca instantánea</li>
 						<li>1 cucharadita de azúcar</li>
 						<li>500 ml agua tibia</li>
@@ -201,7 +206,7 @@
 						<li>65 gr harina de maíz fina (chuchoca)</li>
 						<li>2 cucharaditas de sal</li>
 						<li>625 gr harina</li>
-						<li>Salsa</li>
+						<li class="mb-4">Salsa</li>
 						<li>5 cucharadas de aceite de oliva</li>
 						<li>½ cebolla picada en cubos finos</li>
 						<li>2 cucharaditas de sal</li>
@@ -209,7 +214,7 @@
 						<li>1 ½ cucharadas de Albahaca Gourmet 2</li>
 						<li>2 tarro de tomates en cubos al natural</li>
 						<li>2 cucharaditas de azúcar</li>
-						<li>Relleno</li>
+						<li class="mb-4">Relleno</li>
 						<li>½ cebolla, en cubos</li>
 						<li>500 gr hojas de espinacas picadas</li>
 						<li>400 gr de champiñones</li>
@@ -218,8 +223,10 @@
 					</ul>
 				</div>
 				<div class="col-sm-12 col-md-6">
-					<span class="text-uppercase preparation">Preparación</span>
-					<ol>
+					<span class="text-uppercase preparation my-4 d-block fw-bold"
+						>Preparación</span
+					>
+					<ol class="preparation-list">
 						<li>
 							Para la masa, disolver la levadura y el azúcar en agua tibia en un
 							bol grande. Dejar reposar 2 minutos. Agregar el aceite, la harina
@@ -271,19 +278,21 @@
 
 			<hr />
 
-			<section class="relatedRecipes">
-				<h2 class="text-center text-uppercase display-6">
+			<section class="relatedRecipes mt-4 mb-5 pb-4">
+				<h2 class="text-center text-uppercase fw-bold display-6 mb-3">
 					Recetas relacionadas
 				</h2>
-				<div class="row justify-content-center">
-					<div class="card" style="width: 18rem">
+				<div class="row justify-content-evenly">
+					<div class="card mt-4" style="width: 18rem">
 						<img
 							src="./assets/img/recipe-card-1.png"
 							class="card-img-top"
 							alt="..."
 						/>
 						<div class="card-body">
-							<h5 class="card-title text-uppercase relatedRecipesTitleCard">
+							<h5
+								class="card-title text-uppercase fw-bold relatedRecipesTitleCard"
+							>
 								Panqueques con manjar y crema
 							</h5>
 							<p class="card-text">
@@ -292,14 +301,16 @@
 							</p>
 						</div>
 					</div>
-					<div class="card" style="width: 18rem">
+					<div class="card mt-4" style="width: 18rem">
 						<img
 							src="./assets/img/recipe-card-2.png"
 							class="card-img-top"
 							alt="..."
 						/>
 						<div class="card-body">
-							<h5 class="card-title text-uppercase relatedRecipesTitleCard">
+							<h5
+								class="card-title text-uppercase fw-bold relatedRecipesTitleCard"
+							>
 								Tiramisú
 							</h5>
 							<p class="card-text">
@@ -309,14 +320,16 @@
 							</p>
 						</div>
 					</div>
-					<div class="card" style="width: 18rem">
+					<div class="card mt-4" style="width: 18rem">
 						<img
 							src="./assets/img/recipe-card-3.png"
 							class="card-img-top"
 							alt="..."
 						/>
 						<div class="card-body">
-							<h5 class="card-title text-uppercase relatedRecipesTitleCard">
+							<h5
+								class="card-title text-uppercase fw-bold relatedRecipesTitleCard"
+							>
 								Plateada
 							</h5>
 							<p class="card-text">
@@ -328,21 +341,26 @@
 					</div>
 				</div>
 			</section>
+		</article>
 
-			<section class="bg-danger text-light text-center" id="newsletter">
-				<h3 class="display-6 text-uppercase">
+		<footer class="text-center bg-danger" id="footer">
+			<div class="bg-danger text-light text-center p-5" id="newsletter">
+				<h3 class="display-6 text-uppercase fw-bold pt-5 mt-5">
 					Suscríbete en nuestro newsletter
 				</h3>
 				<h4>
 					y obtén las mejores recetas que tenemos en
 					<span class="main-logo">Ricomida</span>
 				</h4>
-				<button type="button" class="btn btn-outline-light">Empezar</button>
-			</section>
-		</article>
-
-		<footer class="text-center bg-dark" id="footer">
-			<span class="main-logo text-light">Ricomida</span>
+				<div class="py-5 mb-5">
+					<button type="button" class="btn btn-outline-light px-5">
+						Empezar
+					</button>
+				</div>
+			</div>
+			<div class="py-4 bg-dark mt-5">
+				<span class="main-logo text-light">Ricomida</span>
+			</div>
 		</footer>
 
 		<script

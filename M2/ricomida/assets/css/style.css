@@ -22,11 +22,19 @@ section .main-logo {
 	font-size: 1.25rem;
 }
 
-.ingredients,
-.preparation {
-	text-decoration: underline;
-	/* text-decoration-thickness: 0.1rem; */
-	text-underline-offset: 0.5rem;
+@media (min-width: 768px) {
+	.ingredients,
+	.preparation {
+		text-decoration: underline;
+		text-underline-offset: 0.7rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.ingredients,
+	.preparation {
+		text-decoration: none;
+	}
 }
 
 h5 {
@@ -43,14 +51,24 @@ h5 {
 	border-radius: 50% !important;
 }
 
-/* Se me está generando un margen derecho que no puedo sacar, con las siguientes propiedades solo se soluciona a medias el problema */
-
-/* #nav,
-#newsletter,
-#footer {
-	width: 100vw;
+.ingredients-list {
+	list-style-type: none;
+	padding-left: 0;
 }
 
-body{
-	width: 100%;
-} */
+.preparation-list {
+	padding: 1rem;
+}
+
+.preparation-list li {
+	margin-bottom: 1.5rem;
+}
+
+.relatedRecipes .card {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+hr{
+	
+}
