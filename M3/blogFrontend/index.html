@@ -1,73 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Blog FrontEnd</title>
+		<link href="./assets/css/style.css" rel="stylesheet" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog FrontEnd</title>
-  <link href="./assets/css/style.css" rel="stylesheet">
-</head>
+	<body>
+		<header class="header">
+			<img
+				class="header__main-logo"
+				src="./assets/img/logos/adl.png"
+				alt="main logo"
+			/>
+			<span class="header__main-title">Blog FrontEnd</span>
+		</header>
+		<hr />
+		<!-- News Section -->
+		<article class="news">
+			<h2 class="news__title">Novedades</h2>
+			<div class="news-card-container">
+				<section class="news__card-main">
+					<div class="card card-main__column">
+						<img
+							class="card__image"
+							src="./assets/img/posts/bootstrap.png"
+							alt="bootstrap image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title"
+							>Modifica el tema de Bootstrap con variables CSS</span
+						>
+						<div class="card__copyright">
+							<img
+								class="card-copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card-copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+				</section>
+				<section class="news__other-cards">
+					<div class="card card-news__row">
+						<img
+							class="card__image"
+							src="./assets/img/posts/Herencia-JS.png"
+							alt="javascript inheritance image"
+						/>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Herencia en Javascript</span>
+							<div class="card__copyright">
+								<img
+									class="card-copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card-copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
 
-<body>
-  <header>
-    <div>
-      <img src="./assets/img/logos/adl.png" alt="">
-      <span>Blog FrontEnd</span>
-    </div>
-  </header>
-  <hr>
-  <!-- News Section -->
-  <article>
-    <h2>Novedades</h2>
-    <section>
+					<div class="card card-news__row">
+						<img
+							class="card__image"
+							src="./assets/img/posts/Etiquetas-semánticas-HTML.png"
+							alt="semantic tags image"
+						/>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Etiquetas semánticas</span>
+							<div class="card__copyright">
+								<img
+									class="card-copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card-copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
 
-    </section>
-    <section>
+					<div class="card card-news__row">
+						<img
+							class="card__image"
+							src="./assets/img/posts/reactComponents.png"
+							alt="react components image"
+						/>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Componentes React</span>
+							<div class="card__copyright">
+								<img
+									class="card-copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card-copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</article>
+		<hr />
+		<div class="popular-categories-container">
+			<!-- Popular section -->
+			<article class="popular">
+				<h2 class="popular__title">Populares</h2>
+				<div class="popular__cards-container">
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/vue-components.png"
+							alt="vue components image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Componentes Vue</span>
+						<div class="card__copyright">
+							<img
+								class="card-copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card-copyright__text">Desafío Latam</span>
+						</div>
+					</div>
 
-    </section>
-  </article>
-  <hr>
-  <!-- Popular section -->
-  <article>
-    <h2>Populares</h2>
-  </article>
-  <!-- Categories Section  -->
-  <article>
-    <h2>Categorías</h2>
-    <div>
-      <img src="./assets/img/logos/html.png" alt="">
-      <span>html</span>
-    </div>
-    <div>
-      <img src="./assets/img/logos/js.png" alt="">
-      <span>javascript</span>
-    </div>
-    <div>
-      <img src="./assets/img/logos/css.png" alt="">
-      <span>css</span>
-    </div>
-    <div>
-      <img src="./assets/img/logos/react.png" alt="">
-      <span>react</span>
-    </div>
-    <div>
-      <img src="./assets/img/logos/vue.png" alt="">
-      <span>vue</span>
-    </div>
-    <div>
-      <img src="./assets/img/logos/bootstrap-logo.png" alt="">
-      <span>bootstrap</span>
-    </div>
-    <a href="#">Ver todas las categorías ></a>
-  </article>
-  <hr>
-  <footer>
-    <div>
-      <img src="./assets/img/logos/adl.png" alt="">
-      <span>Blog FrontEnd</span>
-    </div>
-    <span>Desafío Latam - 2022</span>
-  </footer>
-</body>
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/api-js.png"
+							alt="api javascript image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Consumo de API con Javascript</span>
+						<div class="card__copyright">
+							<img
+								class="card-copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card-copyright__text">Desafío Latam</span>
+						</div>
+					</div>
 
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/sass.jpg"
+							alt="sass image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">CSS reutilizable con Sass</span>
+						<div class="card__copyright">
+							<img
+								class="card-copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card-copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/bootstrap.png"
+							alt="bootstrap image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Componentes Bootstrap</span>
+						<div class="card__copyright">
+							<img
+								class="card-copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card-copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+				</div>
+			</article>
+			<!-- Categories Section  -->
+			<article class="categories">
+				<h2 class="categories__title">Categorías</h2>
+				<div class="categories__html-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/html.png"
+						alt="html logo"
+					/>
+					<span class="categories__text">HTML</span>
+				</div>
+				<div class="categories__js-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/js.png"
+						alt="javascript logo"
+					/>
+					<span class="categories__text">Javascript</span>
+				</div>
+				<div class="categories__css-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/css.png"
+						alt="css logo"
+					/>
+					<span class="categories__text">CSS</span>
+				</div>
+				<div class="categories__react-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/react.png"
+						alt="react logo"
+					/>
+					<span class="categories__text">React</span>
+				</div>
+				<div class="categories__vue-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/vue.png"
+						alt="vue logo"
+					/>
+					<span class="categories__text">Vue</span>
+				</div>
+				<div class="categories__bootstrap-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/bootstrap-logo.png"
+						alt="bootstrap logo"
+					/>
+					<span class="categories__text">Bootstrap</span>
+				</div>
+				<a class="categories__link" href="#">Ver todas las categorías ></a>
+			</article>
+		</div>
+
+		<hr />
+		<footer class="footer">
+			<div class="footer__logo-container">
+				<img
+					class="footer__main-logo"
+					src="./assets/img/logos/adl.png"
+					alt="main logo"
+				/>
+				<span class="footer__main-title">Blog FrontEnd</span>
+			</div>
+			<span class="footer__copyright">Desafío Latam - 2022</span>
+		</footer>
+	</body>
 </html>
