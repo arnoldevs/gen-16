@@ -4,6 +4,7 @@
 	border: 0;
 	margin: 0;
 	padding: 0;
+	font-size: 1.125rem;
 	font-family: "Poppins", sans-serif;
 	font-weight: 400;
 	font-style: normal;
@@ -52,7 +53,7 @@ hr {
 .card__copyright {
 	display: flex;
 	align-items: center;
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 .card-copyright__text {
@@ -74,7 +75,7 @@ hr {
 .card__title {
 	margin: 0.3rem 0;
 	font-size: 1.5rem;
-  padding: 0;
+	padding: 0;
 }
 
 .card__date {
@@ -93,13 +94,15 @@ hr {
 }
 
 .news__other-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 35%;
 }
 
 .card.card-news__row {
 	display: flex;
 	flex-direction: row;
-	width: 24%;
 }
 
 .card.card-main__column {
@@ -124,7 +127,7 @@ hr {
 .card__content-news {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	margin: 0 1.5rem;
 }
 
 .card__image,
@@ -137,13 +140,14 @@ hr {
 	justify-content: space-around;
 	align-items: center;
 	padding: 0.5rem 0;
+	transition: all 0.3s ease-in-out;
 }
 
 .categories {
 	width: 35%;
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
 .categories__image {
@@ -161,7 +165,8 @@ hr {
 .categories__link {
 	color: black;
 	text-decoration: none;
-	margin-top: 1.5rem;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
 }
 
 .categories__html-container {
@@ -207,8 +212,44 @@ hr {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+	gap: 2rem;
+	margin-top: 1.5rem;
+}
+
+.popular__cards-container > .card > .card__copyright {
+	margin: 2rem 0;
+}
+
+.popular__cards-container > .card > .card__title {
+	margin: 1rem 0;
+}
+
+.categories__title--hover {
+	transition: background 0.3s ease-in-out;
+}
+
+.categories__title--hover:hover {
+	background: linear-gradient(to right, #f00, #ff0, #0ff);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.categories__link--hover:hover {
+	border-radius: 1rem;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+	transform: scale(1.1);
+}
+
+/* En éste ejemplo no fue aplicado el llamado mediante modificador BEM solo es una prueba */
+[class^="categories__"][class$="container"]:hover {
+	box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.3);
+	transform: translateY(-0.625rem) scale(1.1);
+	background-color: darken(#fff, 5%);
 }
 
 .footer,
