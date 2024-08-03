@@ -29,3 +29,12 @@
 		}
 	}
 }
+
+@media (max-width: 576px) {
+	.testimonials {
+		&__cards {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.carouselPlaces {
+	height: 500px;
+	&__image {
+		height: 500px;
+		object-fit: fill;
+	}
+}
+
+@media (max-width: 576px) {
+	.carouselPlaces {
+		height: 300px;
+		&__image {
+			height: 300px;
+		}
+	}
+}

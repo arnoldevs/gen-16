@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11846,6 +11844,22 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.carouselPlaces {
+  height: 500px;
+}
+.carouselPlaces__image {
+  height: 500px;
+  object-fit: fill;
+}
+
+@media (max-width: 576px) {
+  .carouselPlaces {
+    height: 300px;
+  }
+  .carouselPlaces__image {
+    height: 300px;
+  }
+}
 .testimonials {
   text-align: center;
 }
@@ -11876,6 +11890,13 @@ textarea.form-control-lg {
 .testimonials .comment__person {
   font-size: 1.5rem;
   margin: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .testimonials__cards {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
