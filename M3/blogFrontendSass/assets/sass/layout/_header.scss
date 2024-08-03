@@ -1,0 +1,17 @@
+.header {
+	width: 100vw;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&__logo {
+		width: 3rem;
+		border-radius: 0.625rem;
+		margin-inline: 1rem;
+	}
+
+	&__title {
+		font-weight: Bold;
+		font-size: 2em;
+	}
+}

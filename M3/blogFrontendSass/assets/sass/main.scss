@@ -1,18 +1,18 @@
 // Abstract
-
+@use "abstracts/mixins";
 // Vendors
 
 // Base
-@import 'base/reset', 
-				'base/typography';
+@use "base/reset";
+@use "base/typography";
 
 // Layout
-@import 'layout/form-login',
-				'layout/header';
+@use "layout/form-login";
+@use "layout/header";
 
 // Components
-@import 'components/buttons',
-				'components/inputs';
+@use "components/buttons";
+@use "components/inputs";
 
 // Pages
 

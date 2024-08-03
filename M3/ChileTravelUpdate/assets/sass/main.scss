@@ -1,4 +1,5 @@
 // Abstracts
+@use "./abstracts/typography";
 
 // Vendors
 @use "./vendors/bootstrap";
@@ -8,6 +9,7 @@
 // Layout
 
 // Components
+@use "./components/card-comment";
 
 // Pages
 

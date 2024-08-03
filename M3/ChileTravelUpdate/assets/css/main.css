@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11843,6 +11845,37 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.testimonials {
+  text-align: center;
+}
+.testimonials__title {
+  font-weight: 500;
+  padding: 1.5rem;
+  border-bottom: 0.25rem solid white;
+}
+.testimonials__cards {
+  display: flex;
+}
+.testimonials .comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 2.5rem;
+  margin-inline: 4rem;
+}
+.testimonials .comment__text {
+  font-style: italic;
+}
+.testimonials .comment__photo {
+  border-radius: 50%;
+  border: 0.0625rem solid white;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.testimonials .comment__person {
+  font-size: 1.5rem;
+  margin: 0.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
