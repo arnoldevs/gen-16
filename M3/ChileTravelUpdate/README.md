@@ -18,3 +18,5 @@
 > Cards in mobile version require a spacing adjustment
 
 > To achieve the alert, the behavior of the form was modified
+
+### **_This project was created and optimized on FullHD screens_**
