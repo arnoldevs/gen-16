@@ -1,0 +1,25 @@
+nav {
+	backdrop-filter: none;
+	background-color: transparent;
+}
+nav.scrolled {
+	// background-color: rgba(33, 37, 41, 0.8);
+	background-color: rgba(57, 58, 59, 0.8);
+	backdrop-filter: blur(10px);
+	transition: backdrop-filter 0.3s ease;
+}
+.main-logo {
+	width: 2.5rem;
+}
+
+@media (max-width: 992px) {
+	.nav-link {
+		background-color: rgba(57, 58, 59, 0.8);
+		backdrop-filter: blur(10px);
+		transition: backdrop-filter 0.3s ease;
+		border-radius: 0.5rem;
+		margin: 2px;
+		display: inline-block;
+		padding: 10px;
+	}
+}

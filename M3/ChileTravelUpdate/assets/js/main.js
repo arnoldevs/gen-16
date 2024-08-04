@@ -31,3 +31,32 @@ document
 	.addEventListener("submit", function (event) {
 		event.preventDefault();
 	});
+
+const links = document.querySelectorAll("nav li a");
+
+links.forEach((link) => {
+	link.addEventListener("click", (e) => {
+		e.preventDefault();
+		const targetId = link.getAttribute("href").substring(1);
+		const targetElement = document.getElementById(targetId);
+
+		// Calcula el desplazamiento considerando la altura del navbar
+		const navbarHeight = document.querySelector("nav").offsetHeight;
+		const targetPosition = targetElement.offsetTop - navbarHeight;
+
+		window.scrollTo({
+			top: targetPosition,
+			behavior: "smooth",
+		});
+	});
+});
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+	if (window.scrollY > 0) {
+		nav.classList.add("scrolled");
+	} else {
+		nav.classList.remove("scrolled");
+	}
+});
