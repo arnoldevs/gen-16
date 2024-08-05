@@ -1,0 +1,52 @@
+.article {
+	margin-inline: 4rem;
+	.post {
+		&__title {
+			font-weight: bold;
+			padding-block: 1rem;
+		}
+		&__creator {
+			display: flex;
+			align-items: center;
+			&__logo {
+				width: 2.5rem;
+				border-radius: 50%;
+			}
+			&__name {
+				font-weight: 500;
+				padding-inline: 1rem;
+			}
+			&__date {
+				padding-inline: 3rem;
+			}
+		}
+		&__content {
+			border-radius: 1rem;
+			margin-block: 2rem;
+			padding: 2rem;
+			background-color: #eeeeee;
+			display: flex;
+			flex-direction: column;
+			&__image {
+				border-radius: 1rem;
+				width: 50%;
+				height: auto;
+				align-self: center;
+				margin: 2rem;
+			}
+		}
+	}
+	.related {
+		margin-bottom: 3.5rem;
+		&__title {
+			font-weight: bold;
+		}
+		&__container {
+			display: flex;
+			justify-content: space-between;
+		}
+		.card {
+			width: 25%;
+		}
+	}
+}

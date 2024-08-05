@@ -1,74 +1,69 @@
+@use "../themes/colors";
 @use "../abstracts/mixins" as m;
 
+$form-width: 370px;
+
 .login {
-	background-color: rebeccapurple;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	&__title {
-		font-size: 1.5em;
-		font-weight: bold;
-	}
+  @include m.align-column;
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 }
 
 .form {
-	@include m.align-column;
+  @include align-column;
 
-	&__inputs__container {
-		@include m.align-column;
-	}
+  &__container_inputs {
+    @include align-column;
+  }
 
-	&__input {
-		width: 12.5rem;
-		border-radius: 0.3125rem;
-		border-width: 0;
-		margin-block: 0.3125rem;
-		padding: 0.625rem;
-	}
+  &__subcontainer {
+    @include align-column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: $form-width;
+    margin-top: 10px;
+  }
 
-	&__subcontainer {
-		@include m.align-column($direction: row, $justify: space-evenly);
-		width: 60vw;
-		margin-top: 0.625rem;
-	}
+  &__container_checkbox {
+    @include align-column;
+    flex-direction: row;
+  }
 
-	&__checkbox__container {
-		@include m.align-column($direction: row);
-	}
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid colors.$custom-grey;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
 
-	&__checkbox {
-		width: 1.25rem;
-		border-radius: 50%;
-	}
+  &__checkbox_label {
+    margin-left: 5px;
+    font-size: 1em;
+  }
 
-	&__checkbox__label {
-		margin-left: 0.3125rem;
-		font-size: 1em;
-	}
+  &__link {
+    cursor: pointer;
+    text-decoration: none;
+    color: colors.$black;
+  }
 
-	&__link {
-		cursor: pointer;
-		text-decoration: none;
-		color: black;
-	}
+  &__container-buttons {
+    @include align-column;
+    margin-top: 10px;
+  }
 
-	&__buttons__container {
-		@include m.align-column;
+  &__footer-text {
+    margin-top: 10px;
+  }
 
-		&__button {
-			@include m.align-column($direction: row);
-			width: 50vw;
-			margin-top: 0.625rem;
-			margin-block: 0.3125rem;
-			appearance: none;
-			border-width: 0;
-			background-color: white;
-			border-radius: 0.625rem;
-		}
-
-		&__button__icon {
-			width: 1.875rem;
-		}
-	}
+  &__link--register {
+    font-weight: bold;
+  }
 }

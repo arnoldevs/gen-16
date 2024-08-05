@@ -2,53 +2,295 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Blog Fronted With Sass</title>
-		<link rel="stylesheet" href="./assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Blog FrontEnd</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="shortcut icon"
+			href="./assets/img/logos/adl.png"
+			type="image/x-icon"
+		/>
+		<link href="./assets/css/main.css" rel="stylesheet" />
+		<script src="./assets/js/main.js"></script>
 	</head>
+
 	<body>
 		<header class="header">
 			<img
 				src="./assets/img/logos/adl.png"
-				alt="main logo desafio latam"
-				class="header__logo"
+				alt="logo desafio latam"
+				class="header__image"
 			/>
 			<h1 class="header__title">Blog FrontEnd</h1>
+			<div class="redirection">
+				<a href="login.html">
+					<button class="redirection__btn">Iniciar Sesion</button>
+				</a>
+				<a href="register.html">
+					<button class="redirection__btn">Registrarse</button>
+				</a>
+			</div>
 		</header>
-		<hr />
-		<section class="login">
-			<h3 class="login__title">Bienvenido</h3>
-			<form action="" class="form">
-				<div class="form__inputs__container">
-					<input type="email" placeholder="Email" class="form__input" />
-					<input type="password" placeholder="Contraseña" class="form__input" />
-				</div>
-				<div class="form__subcontainer">
-					<div class="form__checkbox__container">
-						<input type="checkbox" class="form__checkbox" />
-						<label for="" class="form__checkbox__label">Recordarme</label>
-					</div>
-					<a href="#" class="form__link">¿Olvidaste tu contraseña?</a>
-				</div>
-				<div class="form__buttons__container">
-					<button type="submit" class="form__button">Iniciar Sesión</button>
-					<button type="button" class="form__button">
+		<!-- News Section -->
+		<article class="news">
+			<h2 class="news__title">Novedades</h2>
+			<div class="news-card-container">
+				<section class="news__card-main">
+					<a href="post-details.html" class="card--onClick">
+						<div class="card card-main__column">
+							<img
+								class="card__image"
+								src="./assets/img/posts/bootstrap.png"
+								alt="bootstrap image"
+							/>
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title"
+								>Modifica el tema de Bootstrap con variables CSS</span
+							>
+							<div class="card__copyright">
+								<img
+									class="card__copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card__copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</a>
+				</section>
+				<section class="news__other-cards">
+					<div class="card card-news__row">
 						<img
-							src="./assets/img/logos/google.png"
-							alt="google logo"
-							class="form__button__icon"
+							class="card__image"
+							src="./assets/img/posts/Herencia-JS.png"
+							alt="javascript inheritance image"
 						/>
-						Inicia sesión con Google
-					</button>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Herencia en Javascript</span>
+							<div class="card__copyright">
+								<img
+									class="card__copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card__copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="card card-news__row">
+						<img
+							class="card__image"
+							src="./assets/img/posts/Etiquetas-sem nticas-HTML.png"
+							alt="semantic tags image"
+						/>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Etiquetas semánticas</span>
+							<div class="card__copyright">
+								<img
+									class="card__copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card__copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="card card-news__row">
+						<img
+							class="card__image"
+							src="./assets/img/posts/reactComponents.png"
+							alt="react components image"
+						/>
+						<div class="card__content-news">
+							<span class="card__date">24 Noviembre 2022</span>
+							<span class="card__title">Componentes React</span>
+							<div class="card__copyright">
+								<img
+									class="card__copyright__logo"
+									src="./assets/img/logos/adl.png"
+									alt="main logo"
+								/>
+								<span class="card__copyright__text">Desafío Latam</span>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</article>
+		<hr />
+		<div class="popular-categories-container">
+			<!-- Popular section -->
+			<article class="popular">
+				<h2 class="popular__title">Populares</h2>
+				<div class="popular__cards-container">
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/vue-components.png"
+							alt="vue components image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Componentes Vue</span>
+						<div class="card__copyright">
+							<img
+								class="card__copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card__copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/api-js.png"
+							alt="api javascript image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Consumo de API con Javascript</span>
+						<div class="card__copyright">
+							<img
+								class="card__copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card__copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/sass.jpg"
+							alt="sass image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">CSS reutilizable con Sass</span>
+						<div class="card__copyright">
+							<img
+								class="card__copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card__copyright__text">Desafío Latam</span>
+						</div>
+					</div>
+
+					<div class="card">
+						<img
+							class="card__image"
+							src="./assets/img/posts/bootstrap.png"
+							alt="bootstrap image"
+						/>
+						<span class="card__date">24 Noviembre 2022</span>
+						<span class="card__title">Componentes Bootstrap</span>
+						<div class="card__copyright">
+							<img
+								class="card__copyright__logo"
+								src="./assets/img/logos/adl.png"
+								alt="main logo"
+							/>
+							<span class="card__copyright__text">Desafío Latam</span>
+						</div>
+					</div>
 				</div>
-				<span
-					>¿No tienes una cuenta?<a
-						href="https://www.google.com"
-						class="form__link__register"
-						>Regístrate</a
-					></span
+			</article>
+			<!-- Categories Section  -->
+			<article class="categories">
+				<h2 class="categories__title categories__title--hover">Categorías</h2>
+				<div class="categories__html-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/html.png"
+						alt="html logo"
+					/>
+					<span class="categories__text">HTML</span>
+				</div>
+				<div class="categories__js-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/js.png"
+						alt="javascript logo"
+					/>
+					<span class="categories__text">Javascript</span>
+				</div>
+				<div class="categories__css-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/css.png"
+						alt="css logo"
+					/>
+					<span class="categories__text">CSS</span>
+				</div>
+				<div class="categories__react-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/react.png"
+						alt="react logo"
+					/>
+					<span class="categories__text">React</span>
+				</div>
+				<div class="categories__vue-container">
+					<img
+						class="categories__image"
+						src="./assets/img/logos/vue.png"
+						alt="vue logo"
+					/>
+					<span class="categories__text">Vue</span>
+				</div>
+				<a href="post-details.html">
+					<div class="categories__bootstrap-container">
+						<img
+							class="categories__image"
+							src="./assets/img/logos/bootstrap-logo.png"
+							alt="bootstrap logo"
+						/>
+						<span class="categories__text">Bootstrap</span>
+					</div>
+				</a>
+				<a class="categories__link categories__link--hover" href="#"
+					>Ver todas las categorías ></a
 				>
+			</article>
+		</div>
+		<!-- Subscription section -->
+		<section>
+			<form class="subscription">
+				<div class="subscription__email">
+					<label for="inputEmail" class="subscription__email__label"
+						>Mantente actualizado sobre el Desarrollo Front End
+					</label>
+					<input
+						type="email"
+						id="inputEmail"
+						class="subscription__email__input"
+					/>
+				</div>
+				<button type="submit" class="subscription__submit">Suscríbete</button>
 			</form>
 		</section>
+		<hr />
+		<footer class="footer">
+			<div class="footer__logo-container">
+				<img
+					class="footer__main-logo"
+					src="./assets/img/logos/adl.png"
+					alt="main logo"
+				/>
+				<span class="footer__main-title">Blog FrontEnd</span>
+			</div>
+			<span class="footer__copyright">Desafío Latam - 2022</span>
+		</footer>
 	</body>
 </html>

@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as m;
+.subscription {
+	color: white;
+	height: 300px;
+	margin: 4rem;
+	@include m.align-column($direction: row, $justify: space-around);
+	background-color: #729e2e;
+	border-radius: 1rem;
+	&__email {
+		width: 60%;
+		&__label {
+			font-size: 3rem;
+			font-weight: bold;
+		}
+		&__input {
+			padding: 1rem;
+			border-radius: 0.5rem;
+			width: 100%;
+			margin-top: 3rem;
+		}
+	}
+	&__submit {
+		padding: 1rem 5rem;
+		font-weight: bold;
+		font-size: 1.5rem;
+		display: flex;
+		align-self: flex-end;
+		margin-bottom: 2rem;
+		width: 20%;
+	}
+}

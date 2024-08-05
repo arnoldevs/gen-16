@@ -1,0 +1,11 @@
+@use "../themes/colors";
+
+.input {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 0px;
+  margin-block: 5px;
+  padding-left: 10px;
+  border: 2px solid colors.$custom-grey;
+}

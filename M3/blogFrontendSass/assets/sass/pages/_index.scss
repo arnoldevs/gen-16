@@ -1,0 +1,253 @@
+@use "../base/typography" as t;
+@use "../themes/colors" as c;
+* {
+	font-family: t.$poppins-font;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.news,
+.popular,
+.categories,
+.footer {
+	margin: 2rem 4rem;
+}
+
+hr {
+	border: 0.0625rem solid c.$custom-grey;
+}
+
+[class$="__main-logo"] {
+	width: 3rem;
+	border-radius: 0.5rem;
+}
+.news__title,
+.popular__title,
+.card__title,
+.categories__title,
+.categories__title,
+[class$="__main-title"] {
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 1rem;
+}
+
+/* Cards default styles */
+
+.card {
+	width: 48%;
+	display: flex;
+	flex-direction: column;
+}
+
+.card__copyright {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.card__copyright__text {
+	margin-left: 0.5rem;
+	font-weight: 500;
+}
+
+.card__copyright__logo {
+	width: 2.5rem;
+	border-radius: 50%;
+}
+
+.card__image {
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+
+.card__title {
+	margin: 0.3rem 0;
+	font-size: 1.5rem;
+	padding: 0;
+}
+
+.card__date {
+	margin: 0.3rem 0;
+}
+/* -------------------- */
+
+.news-card-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1.5rem;
+}
+
+.news__card-main {
+	width: 60%;
+}
+
+.news__other-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 35%;
+}
+
+.card.card-news__row {
+	display: flex;
+	flex-direction: row;
+}
+
+.card.card-main__column {
+	min-width: 100%;
+	height: auto;
+}
+
+.card-main__column > .card__copyright > .card__copyright__logo {
+	width: 4rem;
+}
+
+.card-main__column > .card__title,
+.card-main__column > .card__copyright > .card__copyright__text {
+	font-size: 1.5rem;
+}
+
+.card-main__column > .card__date {
+	margin-top: 1.25rem;
+	font-size: 1.25rem;
+}
+
+.card__content-news {
+	display: flex;
+	flex-direction: column;
+	margin: 0 1.5rem;
+}
+
+.card__image,
+[class^="categories__"][class$="container"] {
+	border-radius: 1rem;
+}
+
+[class^="categories__"][class$="container"] {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0.5rem 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.categories {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.categories__image {
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+}
+
+.categories__text {
+	color: white;
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.categories__link {
+	color: black;
+	text-decoration: none;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+}
+
+.categories__html-container {
+	background-color: #e93e30;
+}
+
+.categories__js-container {
+	background-color: #f7e018;
+}
+
+.categories__css-container {
+	background-color: #299ed5;
+}
+
+.categories__react-container {
+	background-color: #292c33;
+}
+
+.categories__vue-container {
+	background-color: #67c770;
+}
+
+.categories__bootstrap-container {
+	background-color: #563d7c;
+}
+
+.categories__image {
+	max-width: 100%;
+	width: 6rem;
+	height: auto;
+}
+
+.popular-categories-container {
+	display: flex;
+}
+
+.popular {
+	width: 60%;
+}
+
+.popular__cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	margin-top: 1.5rem;
+}
+
+.popular__cards-container > .card > .card__copyright {
+	margin: 2rem 0;
+}
+
+.popular__cards-container > .card > .card__title {
+	margin: 1rem 0;
+}
+
+.categories__title--hover {
+	transition: background 0.3s ease-in-out;
+}
+
+.categories__title--hover:hover {
+	background: linear-gradient(to right, #f00, #ff0, #0ff);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.categories__link--hover:hover {
+	border-radius: 1rem;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+	transform: scale(1.1);
+}
+
+/* En éste ejemplo no fue aplicado el llamado mediante modificador BEM solo es una prueba */
+[class^="categories__"][class$="container"]:hover {
+	box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.3);
+	transform: translateY(-0.625rem) scale(1.1);
+}
+
+.footer,
+.footer__logo-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card--onClick{
+	color: black;
+}

@@ -1,0 +1,28 @@
+@use "../themes/colors";
+@use "../base/typography" as t;
+
+.button {
+  @include align-column;
+  flex-direction: row;
+  width: 300px;
+  height: 50px;
+  margin-block: 5px;
+  appearance: none;
+  border-width: 0px;
+  background-color: colors.$white;
+  border-radius: 10px;
+  border: 2px solid colors.$custom-grey;
+  font-family: t.$poppins-font;
+  font-weight: bold;
+}
+
+.button--icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.button--primary {
+  background-color: colors.$primary-green;
+  color: colors.$white;
+}
