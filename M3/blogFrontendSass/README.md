@@ -23,4 +23,4 @@
 
 [**Preview of the project in operation**](https://mega.nz/file/G5FykIoA#1DOwsmb4oQmBC7RIF2V0j0ujcrRBBSeWtwKn6iG0GT8)
 
-[**Preview option two of the project in operation**](./assets/preview/preview.mp4)
+> _In the assets/preview/ path there are previews of the page in operation_
