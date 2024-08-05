@@ -19,6 +19,8 @@
 
 > Changed the default behavior of the forms
 
-### **_This project was created and optimized on FullHD screens_**
+### **_This page was created and optimized on FullHD screens_**
 
-<iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/uoFHxDga#1DOwsmb4oQmBC7RIF2V0j0ujcrRBBSeWtwKn6iG0GT8!1a1m" allowfullscreen allow="autoplay;"></iframe>
+[**Preview of the project in operation**](https://mega.nz/file/G5FykIoA#1DOwsmb4oQmBC7RIF2V0j0ujcrRBBSeWtwKn6iG0GT8)
+
+[**Preview option two of the project in operation**](./assets/preview/preview.mp4)
