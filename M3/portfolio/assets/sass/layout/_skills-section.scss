@@ -1,0 +1,34 @@
+.skills {
+  &__html {
+    color: var(--bs-orange);
+  }
+
+  &__css {
+    color: var(--bs-cyan);
+  }
+
+  &__sass {
+    color: var(--bs-pink);
+  }
+
+  &__bootstrap {
+    color: var(--bs-purple);
+  }
+
+  &__git {
+    color: var(--bs-orange);
+  }
+
+  &__github {
+    color: var(--bs-dark);
+  }
+
+  &__javascript {
+    color: var(--bs-yellow);
+  }
+
+  &__vue {
+    color: var(--bs-teal);
+  }
+
+}

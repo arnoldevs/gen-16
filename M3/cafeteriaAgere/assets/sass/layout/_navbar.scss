@@ -1,0 +1,17 @@
+@use "../abstract/palette";
+@use "../base/typography";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link-container {
+    display: flex;
+    align-items: center;
+
+    &__link-logo {
+      width: 1rem;
+    }
+  }
+}
