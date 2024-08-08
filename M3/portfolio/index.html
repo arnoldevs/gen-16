@@ -6,50 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
   <script src="https://kit.fontawesome.com/f816551dba.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./assets/images/terminal-solid.svg" type="image/svg">
   <link href="./assets/css/main.css" rel="stylesheet">
   <script type="module" src="./assets/js/main.js">
   </script>
 </head>
 
 <body class="container bg-light">
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold fst-italic fs-1 text-primary" href="#">PeterParker</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            <a class="nav-link" href="#">Mis Habilidades</a>
-            <a class="nav-link" href="#">Proyectos</a>
-            <a class="nav-link">Contacto</a>
-          </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fst-italic fs-1 text-primary" href="#"><i
+          class="fa-solid fa-terminal"></i>Arnold</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="#heroSection">Inicio</a>
+          <a class="nav-link" href="#mySkills">Mis Habilidades</a>
+          <a class="nav-link" href="#myProjects">Proyectos</a>
+          <a class="nav-link" href="#contactMe">Contacto</a>
         </div>
       </div>
-    </nav>
-    <div class="row">
-      <img class="col-12 col-md-6" src="./assets/images/developer.svg" alt="developer at his desk">
-      <div class="col-12 col-md-6">
-        <h1 class="fw-bold text-primary">Soy Peter Parker</h1>
-        <h2 class="fw-semibold text-info">Desarrollador FrontEnd</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum, dui a dignissim rutrum, nisl
-          eros ultricies velit, pellentesque sodales ligula lacus consectetur ex. Vivamus vehicula eros sed ante
-          imperdiet
-          euismod. Morbi et urna ut orci placerat convallis eu sit amet risus. In iaculis eu nibh quis egestas. Fusce et
-          purus nibh. Aenean ullamcorper eu mauris ut pellentesque. Integer dapibus maximus quam, eget efficitur tellus.
-          Duis feugiat nunc nisl. Donec eget facilisis quam. </p>
-        <button type="button" class="btn btn-primary col-12 col-md-4">Contáctame</button>
-      </div>
+    </div>
+  </nav>
+  <header class="row" id="heroSection">
+    <img class="col-12 col-md-6 my-5" src="./assets/images/developer.svg" alt="developer at his desk">
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+      <h1 class="fw-bold text-primary">Soy Arnold Vásquez</h1>
+      <h2 class="fw-semibold text-info">Desarrollador FrontEnd</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptatum iste blanditiis optio, sequi dicta
+        error velit. Fugiat officia corrupti voluptates itaque, molestiae.</p>
+      <button type="button" class="btn btn-primary col-12 col-md-4">Contáctame</button>
     </div>
   </header>
   <article>
-    <section class="skills">
-      <h2 class="skills__title fw-bold text-primary">Mis Habilidades</h2>
+    <section class="skills" id="mySkills">
+      <h2 class="skills__title fw-bold text-primary text-center my-5">Mis Habilidades</h2>
       <div class="row">
-        <div class="col-6 d-flex flex-column flex-md-row">
+        <div class="col-6 d-flex flex-column flex-md-row justify-content-between gap-4">
           <div>
             <i class="fa-brands fa-html5 fa-2xl skills__html"></i>
             <span>HTML</span>
@@ -67,7 +63,7 @@
             <span>Bootstrap</span>
           </div>
         </div>
-        <div class="col-6 d-flex flex-column flex-md-row">
+        <div class="col-6 d-flex flex-column flex-md-row justify-content-between gap-4">
           <div>
             <i class="fa-brands fa-git-alt fa-2xl skills__git"></i>
             <span>Git</span>
@@ -87,32 +83,32 @@
         </div>
       </div>
     </section>
-    <section>
-      <h2 class="fw-bold text-primary">Mis Proyectos</h2>
+    <section id="myProjects">
+      <h2 class="fw-bold text-primary text-center my-5">Mis Proyectos</h2>
       <div class="row">
         <div class="col-6 col-md-3">
-          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid">
+          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid mb-1">
           <span>Meet & Coffee</span>
         </div>
         <div class=" col-6 col-md-3">
-          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid">
+          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid mb-2">
           <span>Meet & Coffee</span>
         </div>
         <div class="col-6 col-md-3">
-          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid">
+          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid mb-2">
           <span>Meet & Coffee</span>
         </div>
         <div class="col-6 col-md-3">
-          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid">
+          <img src="./assets/images/meetcoffee.png" alt="meet and coffee" class="img-fluid mb-2">
           <span>Meet & Coffee</span>
         </div>
       </div>
     </section>
   </article>
-  <footer>
-    <h2 class="fw-bold text-primary">Contáctame</h2>
+  <footer id="contactMe">
+    <h2 class="fw-bold text-primary text-center my-5">Contáctame</h2>
     <div class="row">
-      <form class="col-12 col-md-6">
+      <form class="col-12 col-md-6 my-4">
         <div class="row">
           <div class="mb-3 col-6">
             <input type="text" class="form-control" id="inputName" placeholder="Nombre">
@@ -124,19 +120,25 @@
             <input type="email" class="form-control" id="inputEmail" placeholder="Tu Email">
           </div>
           <div class="mb-3 col-12">
-            <textarea class="form-control" placeholder="Escribe tu mensaje" id="textArea"></textarea>
+            <textarea class="form-control" placeholder="Escribe tu mensaje" id="textArea"
+              style="height: 90px"></textarea>
           </div>
           <div class="mb-3">
             <button type="submit" class="btn btn-primary col-12 col-md-4">Enviar</button>
           </div>
         </div>
       </form>
-      <div class="col-12 col-md-6 d-flex flex-column">
-        <span><i class="fa-solid fa-phone"></i>+56999887766</span>
-        <span><i class="fa-solid fa-envelope"></i>contacto@disroot.org</span>
-        <span><i class="fa-brands fa-linkedin"></i>tulinkedin</span>
-        <span><i class="fa-brands fa-github"></i>tugithub</span>
-        <span><i class="fa-brands fa-instagram"></i>tuinstagram</span>
+      <div class="col-12 col-md-6 d-flex flex-column gap-3 mb-3">
+        <a href="tel:+56999887766" class="text-reset text-decoration-none"><i
+            class="fa-solid fa-phone me-3"></i>+56999887766</a>
+        <a href="mailto:correo@correo.com" class="text-reset text-decoration-none"><i
+            class="fa-solid fa-envelope me-3"></i>correo@correo.com</a>
+        <a href="https://www.linkedin.com/" class="text-reset text-decoration-none"><i
+            class="fa-brands fa-linkedin me-3"></i>Linkedin</a>
+        <a href="https://github.com/" class="text-reset text-decoration-none" target="_blank"><i
+            class="fa-brands fa-github me-3"></i>Github</a>
+        <a href="https://www.instagram.com/" class="text-reset text-decoration-none" target="_blank"><i
+            class="fa-brands fa-instagram me-3"></i>Instagram</a>
       </div>
     </div>
   </footer>
