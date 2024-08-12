@@ -12,5 +12,5 @@
 # Used Services
 
 - GoogleFont Roboto
--GoogleFont PT Mono
+- GoogleFont PT Mono
 - FontAwesome v6
