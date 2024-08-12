@@ -1,0 +1,81 @@
+@use "../abstract/variables";
+@use "../abstract/palette";
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &__image {
+    width: 70%;
+  }
+
+  &__titles {
+    width: 30%;
+    text-align: start;
+    box-sizing: border-box;
+    padding-left: 3rem;
+  }
+
+  &__title {
+    font-size: variables.$font-xxxl;
+  }
+
+  &__subtitle {
+    font-size: variables.$font-xl;
+  }
+
+  &__statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 64%;
+    left: 32%;
+
+    &__title {
+      font-size: variables.$font-xxl;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: variables.$font-l;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-block: 2rem;
+      padding-inline: 4rem;
+      background-color: white;
+      width: 8rem;
+      height: 8rem;
+    }
+
+    &__content__arrow-container {
+      background-color: palette.$coral;
+      width: 8rem;
+      height: 8rem;
+      padding: 2rem;
+    }
+
+    &__content__arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8rem;
+      height: 8rem;
+      background-color: palette.$flame;
+      position: relative;
+      bottom: 3.125rem;
+      right: 3.125rem;
+      z-index: 10;
+      padding: 2rem;
+      font-size: variables.$font-xxl;
+      color: palette.$white;
+    }
+
+  }
+}

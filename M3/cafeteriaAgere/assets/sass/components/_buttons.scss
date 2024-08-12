@@ -1,0 +1,31 @@
+ @use "../abstract/palette";
+ @use "../abstract/variables";
+
+ .navbar__button__primary {
+   background-color: palette.$white;
+   color: palette.$quick-silver;
+   border: 0.0625rem solid palette.$quick-silver;
+   padding: 0.5rem;
+   font-size: variables.$font-l;
+   margin-inline: 1rem;
+ }
+
+ .navbar__button__primary--active:hover {
+   color: palette.$black;
+   border: 0.0625rem solid palette.$black;
+ }
+
+ .navbar__button__secondary {
+   background-color: palette.$shiny-shamrock;
+   border: 0.0625rem solid palette.$shiny-shamrock;
+   padding: 0.5rem;
+   font-size: variables.$font-l;
+   margin-inline: 1rem;
+   color: palette.$white;
+ }
+
+ .navbar__button__secondary--active:hover {
+   background-color: palette.$turquoise-green;
+   border: 0.0625rem solid palette.$turquoise-green;
+   color: palette.$black;
+ }

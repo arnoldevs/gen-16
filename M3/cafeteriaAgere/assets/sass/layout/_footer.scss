@@ -1,0 +1,58 @@
+@use "../abstract/variables";
+@use "../abstract/palette";
+
+.footer {
+  display: flex;
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    padding: 3rem;
+    align-self: center;
+  }
+
+  &__title {
+    font-size: variables.$font-xxl;
+  }
+
+  &__paragraph {
+    font-family: variables.$font-roboto;
+    font-size: variables.$font-l;
+    font-weight: 400;
+    width: 80%;
+  }
+
+  &__map-container {
+    width: 37%;
+    background-color: palette.$blue-de-france;
+    margin-bottom: 2rem;
+  }
+
+  &__image__map {
+    width: 90%;
+    position: relative;
+    right: 2.5rem;
+    top: 1.25rem;
+  }
+
+  &__images-container {
+    position: relative;
+    width: 37%;
+  }
+
+  &__image__machine {
+    width: 100%;
+    position: absolute;
+    right: 0;
+  }
+
+  &__image__coffee {
+    width: 20%;
+    height: 60%;
+    position: relative;
+    z-index: 10;
+    right: 3.125rem;
+    object-fit: cover;
+  }
+}

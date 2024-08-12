@@ -1,17 +1,31 @@
-@use "../abstract/palette";
-@use "../base/typography";
+ @use "../abstract/palette";
+ @use "../abstract/variables";
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-inline: 5rem;
+   margin-block: 2.5rem;
 
-  &__link-container {
-    display: flex;
-    align-items: center;
+   &__links {
+     display: flex;
+     align-items: center;
+   }
 
-    &__link-logo {
-      width: 1rem;
-    }
-  }
-}
+   &__link-logo {
+     width: 2.5rem;
+     margin-inline: 3rem;
+   }
+
+   &__link {
+     text-decoration: none;
+     color: palette.$quick-silver;
+     font-size: variables.$font-l;
+     margin-inline: 1rem;
+   }
+
+   &__link--active:hover {
+     color: palette.$black;
+   }
+ }

@@ -1,13 +1,16 @@
 // abstracts/
 @use "./abstract/palette";
 // vendors/
-
+@use "vendor/fonts";
 // base/
+@use "base/reset";
 @use "./base/typography";
 // layout/
 @use "./layout/navbar";
+@use "layout/header";
+@use "layout/footer";
 // components/
-
+@use "components/buttons";
 // pages/
 
 // themes/
