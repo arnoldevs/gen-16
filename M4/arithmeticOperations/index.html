@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Variables and Operators</title>
+    <link rel="icon" type="image/svg" href="./assets/img/logo.svg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="fw-bold">Uso de variables y operadores aritméticos</h1>
+      <div class="row">
+        <section class="col-12 col-md-6">
+          <h2>Operaciones básicas</h2>
+          <form id="numberForm" onsubmit="return arithmeticOperations(event)">
+            <div class="mb-3">
+              <label for="inputNumber1" class="form-label"
+                >Ingrese primer número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputNumber1"
+                name="inputNumber1"
+                required
+              />
+              <!-- The type="number" and min="1" attributes validate using html -->
+            </div>
+            <div class="mb-3">
+              <label for="inputNumber2" class="form-label"
+                >Ingrese segundo número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputNumber2"
+                name="inputNumber2"
+                required
+              />
+              <!-- The type="number" and min="1" attributes validate using html -->
+            </div>
+            <select class="form-select" required>
+              <option selected disabled>Seleccione operación a realizar</option>
+              <option value="additionOpt">Suma</option>
+              <option value="subtractionOpt">Resta</option>
+              <option value="multiplicationOpt">Multiplicación</option>
+              <option value="divisionOpt">División</option>
+              <option value="moduleOpt">Módulo</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+          </form>
+
+          <button type="button" class="btn btn-warning" onclick="resetForm()">
+            Reiniciar
+          </button>
+          <div
+            id="alertContainer"
+            class="alert alert-danger d-none"
+            role="alert"
+          >
+            <span id="errorMessage"></span>
+          </div>
+
+          <div class="card d-none" id="resultContainer">
+            <div class="card-header fw-bold">Resultado</div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p id="result"></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-6">
+          <h2>Transformación de temperaturas</h2>
+          <form
+            id="temperaturesForm"
+            onsubmit="return temperaturesOperations(event)"
+          >
+            <div class="mb-3">
+              <label for="inputCelsius" class="form-label"
+                >Ingrese la T° en grados Celsius</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputCelsius"
+                name="inputCelsius"
+                required
+              />
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="checkKelvin"
+              />
+              <label class="form-check-label" for="checkKelvin"> Kelvin </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="checkFahrenheit"
+              />
+              <label class="form-check-label" for="checkFahrenheit">
+                Fahrenheit
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Transformar</button>
+          </form>
+
+          <button type="button" class="btn btn-warning" onclick="resetForm()">
+            Reiniciar
+          </button>
+          <div
+            id="alertContainer"
+            class="alert alert-danger d-none"
+            role="alert"
+          >
+            <span id="errorMessage"></span>
+          </div>
+
+          <div class="card d-none" id="resultContainer">
+            <div class="card-header fw-bold">Resultado</div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p id="result"></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-6">
+          <h2>Años-Semanas-Días</h2>
+          <form id="calendarForm" onsubmit="return calendarOperations(event)">
+            <div class="mb-3">
+              <label for="inputDays" class="form-label"
+                >Ingrese una cantidad de días para saber su equivalencia</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDays"
+                name="inputDays"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+          </form>
+
+          <button type="button" class="btn btn-warning" onclick="resetForm()">
+            Reiniciar
+          </button>
+          <div
+            id="alertContainer"
+            class="alert alert-danger d-none"
+            role="alert"
+          >
+            <span id="errorMessage"></span>
+          </div>
+
+          <div class="card d-none" id="resultContainer">
+            <div class="card-header fw-bold">Resultado</div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p id="result"></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-6">
+          <h2>Suma y promedio</h2>
+          <form id="averageForm" onsubmit="return averageOperations(event)">
+            <div class="mb-3">
+              <label for="inputDigit1" class="form-label"
+                >Ingrese primer número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDigit1"
+                name="inputDigit1"
+                required
+              />
+              <label for="inputDigit2" class="form-label"
+                >Ingrese segundo número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDigit2"
+                name="inputDigit2"
+                required
+              />
+              <label for="inputDigit3" class="form-label"
+                >Ingrese tercer número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDigit3"
+                name="inputDigit3"
+                required
+              />
+              <label for="inputDigit4" class="form-label"
+                >Ingrese cuarto número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDigit4"
+                name="inputDigit4"
+                required
+              />
+              <label for="inputDigit5" class="form-label"
+                >Ingrese quinto número</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputDigit5"
+                name="inputDigit5"
+                required
+              />
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Suma
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Promedio
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular</button>
+          </form>
+
+          <button type="button" class="btn btn-warning" onclick="resetForm()">
+            Reiniciar
+          </button>
+          <div
+            id="alertContainer"
+            class="alert alert-danger d-none"
+            role="alert"
+          >
+            <span id="errorMessage"></span>
+          </div>
+
+          <div class="card d-none" id="resultContainer">
+            <div class="card-header fw-bold">Resultado</div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p id="result"></p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
