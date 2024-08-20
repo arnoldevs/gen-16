@@ -1,11 +1,21 @@
+// Metodo creado para reiniciar los valores y alertas del formulario
+function resetForm(operation) {
+  let myForm = operation + "Form";
+  let container = operation + "AlertContainer";
+  let result = operation + "ResultContainer";
+  document.getElementById(myForm).reset();
+  document.getElementById(result).classList.add("d-none");
+  document.getElementById(container).classList.add("d-none");
+}
+
 function arithmeticOperations(event) {
   event.preventDefault();
   // Obtener los valores del formulario
-  const numberForm = document.getElementById("numberForm");
-  const num1 = parseFloat(numberForm.inputNumber1.value);
-  const num2 = parseFloat(numberForm.inputNumber2.value);
-  const alertContainer = document.getElementById("alertContainer");
-  const errorMessage = document.getElementById("errorMessage");
+  const arithmeticForm = document.getElementById("arithmeticForm");
+  const num1 = parseFloat(arithmeticForm.inputNumber1.value);
+  const num2 = parseFloat(arithmeticForm.inputNumber2.value);
+  const alertContainer = document.getElementById("arithmeticAlertContainer");
+  const errorMessage = document.getElementById("arithmeticErrorMessage");
 
   // Validación de los números
   if (isNaN(num1) || isNaN(num2)) {
@@ -69,14 +79,74 @@ function arithmeticOperations(event) {
   }
 
   // Mostrar el resultado
-  const resultElement = document.getElementById("result");
-  document.getElementById("resultContainer").classList.remove("d-none");
+  const resultElement = document.getElementById("arithmeticResult");
+  document
+    .getElementById("arithmeticResultContainer")
+    .classList.remove("d-none");
   resultElement.textContent = result;
 }
 
-// Metodo creado para reiniciar los valores y alertas del formulario
-function resetForm() {
-  numberForm.reset();
-  document.getElementById("resultContainer").classList.add("d-none");
-  alertContainer.classList.add("d-none");
+function averageOperations(event) {
+  event.preventDefault();
+  // Obtener los números del formulario y agregarlos a un array
+  let digits = [];
+  const averageForm = document.getElementById("averageForm");
+  digits.push(parseFloat(averageForm.inputDigit1.value));
+  digits.push(parseFloat(averageForm.inputDigit2.value));
+  digits.push(parseFloat(averageForm.inputDigit3.value));
+  digits.push(parseFloat(averageForm.inputDigit4.value));
+  digits.push(parseFloat(averageForm.inputDigit5.value));
+
+  const alertContainer = document.getElementById("averageAlertContainer");
+  const errorMessage = document.getElementById("averageErrorMessage");
+
+  // Validación de los números
+  let allNumbers = digits.every((element) => !isNaN(element));
+  if (!allNumbers) {
+    errorMessage.textContent = "Por favor, ingresa solo números.";
+    alertContainer.classList.remove("d-none");
+    return;
+  } else {
+    alertContainer.classList.add("d-none");
+  }
+
+  let zero = digits.some((num) => num === 0);
+
+  if (zero) {
+    errorMessage.textContent = "Los números deben ser mayores que 0.";
+    alertContainer.classList.remove("d-none");
+    return;
+  } else {
+    alertContainer.classList.add("d-none");
+  }
+
+  // Calculando el promedio
+  let average = digits.reduce((sum, num) => sum + num, 0) / digits.length;
+  let sum = 0;
+  digits.forEach((num) => {
+    sum += num;
+  });
+
+  // Obtener el valor seleccionado(suma, resta, multiplicacion, division, modulo)
+  const radioChecked = document.querySelector(
+    'input[type="radio"]:checked',
+  ).value;
+
+  let result;
+  // Realizar la operación según la selección
+  switch (radioChecked) {
+    case "sum":
+      result = sum;
+      break;
+    case "average":
+      result = average;
+      break;
+    default:
+      result = "Operación inválida";
+  }
+
+  // Mostrar el resultado
+  const resultElement = document.getElementById("averageResult");
+  document.getElementById("averageResultContainer").classList.remove("d-none");
+  resultElement.textContent = result;
 }

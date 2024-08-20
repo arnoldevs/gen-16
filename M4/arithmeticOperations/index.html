@@ -18,7 +18,10 @@
       <div class="row">
         <section class="col-12 col-md-6">
           <h2>Operaciones básicas</h2>
-          <form id="numberForm" onsubmit="return arithmeticOperations(event)">
+          <form
+            id="arithmeticForm"
+            onsubmit="return arithmeticOperations(event)"
+          >
             <div class="mb-3">
               <label for="inputNumber1" class="form-label"
                 >Ingrese primer número</label
@@ -56,22 +59,26 @@
             <button type="submit" class="btn btn-primary">Calcular</button>
           </form>
 
-          <button type="button" class="btn btn-warning" onclick="resetForm()">
+          <button
+            type="button"
+            class="btn btn-warning"
+            onclick='resetForm("arithmetic")'
+          >
             Reiniciar
           </button>
           <div
-            id="alertContainer"
+            id="arithmeticAlertContainer"
             class="alert alert-danger d-none"
             role="alert"
           >
-            <span id="errorMessage"></span>
+            <span id="arithmeticErrorMessage"></span>
           </div>
 
-          <div class="card d-none" id="resultContainer">
+          <div class="card d-none" id="arithmeticResultContainer">
             <div class="card-header fw-bold">Resultado</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p id="result"></p>
+                <p id="arithmeticResult"></p>
               </blockquote>
             </div>
           </div>
@@ -80,7 +87,7 @@
         <section class="col-12 col-md-6">
           <h2>Transformación de temperaturas</h2>
           <form
-            id="temperaturesForm"
+            id="temperatureForm"
             onsubmit="return temperaturesOperations(event)"
           >
             <div class="mb-3">
@@ -239,6 +246,7 @@
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
+                value="sum"
               />
               <label class="form-check-label" for="flexRadioDefault1">
                 Suma
@@ -250,6 +258,7 @@
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault2"
+                value="average"
               />
               <label class="form-check-label" for="flexRadioDefault2">
                 Promedio
@@ -258,22 +267,26 @@
             <button type="submit" class="btn btn-primary">Calcular</button>
           </form>
 
-          <button type="button" class="btn btn-warning" onclick="resetForm()">
+          <button
+            type="button"
+            class="btn btn-warning"
+            onclick='resetForm("average")'
+          >
             Reiniciar
           </button>
           <div
-            id="alertContainer"
+            id="averageAlertContainer"
             class="alert alert-danger d-none"
             role="alert"
           >
-            <span id="errorMessage"></span>
+            <span id="averageErrorMessage"></span>
           </div>
 
-          <div class="card d-none" id="resultContainer">
+          <div class="card d-none" id="averageResultContainer">
             <div class="card-header fw-bold">Resultado</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p id="result"></p>
+                <p id="averageResult"></p>
               </blockquote>
             </div>
           </div>
