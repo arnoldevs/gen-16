@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cachipun</title>
+    <script
+      src="https://kit.fontawesome.com/f816551dba.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <main>
+      <section id="tablero">
+        <p>
+          Puntos: Jugador <span id="puntosJugador">0</span> - Computadora
+          <span id="puntosComputadora">0</span>
+        </p>
+        <select id="modoJuego">
+          <option value="1">Mejor de 1</option>
+          <option value="3">Mejor de 3</option>
+          <option value="5">Mejor de 5</option>
+        </select>
+      </section>
+
+      <section id="juego">
+        <div>
+          <button type="button" id="piedra">
+            Piedra
+            <i class="fa-solid fa-hand-back-fist"></i>
+          </button>
+        </div>
+
+        <div>
+          <button type="button" id="papel">
+            Papel
+            <i class="fa-solid fa-hand"></i>
+          </button>
+        </div>
+
+        <div>
+          <button type="button" id="tijera">
+            Tijera
+            <i class="fa-solid fa-hand-scissors"></i>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <p id="resultado"></p>
+      </section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

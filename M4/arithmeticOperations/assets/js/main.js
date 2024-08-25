@@ -127,7 +127,7 @@ function averageOperations(event) {
     sum += num;
   });
 
-  // Obtener el valor seleccionado(suma, resta, multiplicacion, division, modulo)
+  // Obtener el valor seleccionado(suma, promedio)
   const radioChecked = document.querySelector(
     'input[type="radio"]:checked',
   ).value;
@@ -148,5 +148,75 @@ function averageOperations(event) {
   // Mostrar el resultado
   const resultElement = document.getElementById("averageResult");
   document.getElementById("averageResultContainer").classList.remove("d-none");
+  resultElement.textContent = result;
+}
+
+function temperaturesOperations(event) {
+  event.preventDefault();
+  // Obtener los valores del formulario
+  const temperatureForm = document.getElementById("temperatureForm");
+  const celsius = parseFloat(temperatureForm.inputCelsius.value);
+  const alertContainer = document.getElementById("temperatureAlertContainer");
+  const errorMessage = document.getElementById("temperatureErrorMessage");
+
+  // Validación de los números
+  if (isNaN(celsius)) {
+    errorMessage.textContent = "Por favor, ingresa solo números.";
+    alertContainer.classList.remove("d-none");
+    return;
+  } else {
+    alertContainer.classList.add("d-none");
+  }
+
+  const KV = 273.15;
+  let kelvin = celsius + KV;
+  let fahrenheit = (celsius * 9) / 5 + 32;
+
+  // Capturar opciones
+  const operation = document.querySelector(
+    ".temperatureCheckBox:checked",
+  ).value;
+
+  // Mostrar el resultado
+  let result =
+    operation === "kelvin"
+      ? kelvin
+      : operation === "fahrenheit"
+        ? fahrenheit
+        : "Error";
+
+  const resultElement = document.getElementById("temperatureResult");
+  document
+    .getElementById("temperatureResultContainer")
+    .classList.remove("d-none");
+  resultElement.textContent = result;
+}
+
+function calendarOperations(event) {
+  event.preventDefault();
+
+  // Obtener los valores del formulario
+  const calendarForm = document.getElementById("calendarForm");
+  const totalDays = parseFloat(calendarForm.inputDays.value);
+  const alertContainer = document.getElementById("calendarAlertContainer");
+  const errorMessage = document.getElementById("calendarErrorMessage");
+
+  // Validación de los números
+  if (isNaN(totalDays)) {
+    errorMessage.textContent = "Por favor, ingresa solo números.";
+    alertContainer.classList.remove("d-none");
+    return;
+  } else {
+    alertContainer.classList.add("d-none");
+  }
+
+  let years = Math.floor(totalDays / 365);
+  let week = Math.floor((totalDays % 365) / 7);
+  let day = (totalDays % 365) % 7;
+
+  // Mostrar resultado completo
+  let result = `Equivalen a ${years} año(s) | ${week} semana(s) | ${day} día(s)`;
+  const resultElement = document.getElementById("calendarResult");
+  document.getElementById("calendarResultContainer").classList.remove("d-none");
   resultElement.textContent = result;
 }
