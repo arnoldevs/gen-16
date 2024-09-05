@@ -1,0 +1,38 @@
+img {
+  mask-image: linear-gradient(black 80%, transparent);
+}
+@keyframes borderAnimation {
+  0% {
+    border-color: #007bff; /* Blue */
+    box-shadow: 0 0 5px #007bff;
+  }
+  50% {
+    border-color: #ffff00; /* Orange */
+    box-shadow: 0 0 5px #ffff00;
+  }
+  100% {
+    border-color: #007bff; /* Blue (de vuelta) */
+    box-shadow: 0 0 5px #007bff;
+  }
+}
+
+#inputId {
+  border: 2px solid;
+  animation: borderAnimation 5s infinite;
+}
+
+.alert-pulsing {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Super Hero</title>
+    <script
+      src="https://kit.fontawesome.com/f816551dba.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="bg-light text-dark">
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-3" href="#">
+          <img
+            src="./assets/img/sh2.jpg"
+            alt="SuperHero"
+            style="width: 3.3rem"
+          />
+          SuperHero
+        </a>
+      </div>
+    </nav>
+
+    <header class="text-center my-3">
+      <img src="./assets/img/sh1.jpg" alt="SuperHero" class="img-fluid" />
+      <h1 class="fw-bold mt-3">Encuentra tu SuperHero</h1>
+    </header>
+
+    <article
+      class="container d-flex flex-column justify-content-center align-items-center"
+    >
+      <section class="text-center mb-5">
+        <form id="heroForm">
+          <div class="mb-3">
+            <label for="inputId" class="form-label"
+              >Ingresa el número del SuperHero a buscar</label
+            >
+            <input type="text" class="form-control text-center" id="inputId" />
+          </div>
+          <button type="submit" class="btn btn-primary col-12 col-md-6">
+            Buscar
+          </button>
+        </form>
+        <div class="alert alert-danger my-3 d-none" role="alert" id="alert">
+          Solo se pueden ingresar números y éstos deben ser mayores a 0
+        </div>
+        <div class="my-3 d-none" id="arrow">
+          <a href="#heroInfo"><i class="fa-solid fa-arrow-down fa-2xl"></i></a>
+        </div>
+      </section>
+
+      <div class="container d-none" id="heroInfo">
+        <div class="row">
+          <section class="col-12 col-md-6">
+            <h3 class="fw-bold">SuperHero encontrado</h3>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src=""
+                    class="img-fluid rounded-start"
+                    alt="hero image"
+                    id="heroImage"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <b>Nombre:</b>
+                      <span id="heroName"></span>
+                    </h5>
+                    <p class="card-text">
+                      <b>Conexiones:</b>
+                      <span id="heroConnections"></span>
+                    </p>
+                    <p class="card-text border-bottom border-2 pb-3">
+                      <b>Publicado por:</b>
+                      <span id="heroPublisher"></span>
+                    </p>
+                    <p class="card-text border-bottom border-2 pb-3">
+                      <b>Ocupación:</b>
+                      <span id="heroWork"></span>
+                    </p>
+                    <p class="card-text border-bottom border-2 pb-3">
+                      <b>Primera Aparición:</b>
+                      <span id="firstAppearance"></span>
+                    </p>
+                    <p class="card-text border-bottom border-2 pb-3">
+                      <b>Altura:</b> <span id="height"></span>
+                    </p>
+                    <p class="card-text border-bottom border-2 pb-3">
+                      <b>Peso:</b> <span id="weight"></span>
+                    </p>
+                    <p class="card-text">
+                      <b>Alias:</b> <span id="aliases"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="col-12 col-md-6">
+            <h3 id="chartTitle" class="fw-bold"></h3>
+            <div id="chartContainer"></div>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <!-- External libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.canvasjs.com/ga/jquery.canvasjs.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
