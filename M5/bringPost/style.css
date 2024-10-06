@@ -1,16 +1,19 @@
-table{
+table {
 	border-collapse: collapse;
 }
-table, th, td {
+table,
+th,
+td {
 	border: 1px solid black;
 }
-td, th {
+td,
+th {
 	padding: 15px;
 }
 tr:nth-child(odd) {
 	background-color: lightgray;
 }
 th {
-	background-color: #4CAF50;
+	background-color: #4caf50;
 	color: white;
 }

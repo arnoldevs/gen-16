@@ -3,44 +3,70 @@ const postContainer = document.getElementById("post-data");
 
 // Función asíncrona para obtener los datos de los posts
 async function getPosts() {
-  // Define la URL del endpoint de la API que contiene los datos de los posts
-  const url = "https://jsonplaceholder.typicode.com/posts";
+	// Define la URL del endpoint de la API que contiene los datos de los posts
+	const url = "https://jsonplaceholder.typicode.com/posts";
 
-  try {
-    // Realiza una petición a la API para obtener los datos
-    const response = await fetch(url);
+	try {
+		// Realiza una petición a la API para obtener los datos
+		const response = await fetch(url);
 
-    // Convierte la respuesta de la API a formato JSON (un objeto JavaScript)
-    const data = await response.json();
+		// Convierte la respuesta de la API a formato JSON (un objeto JavaScript)
+		const data = await response.json();
 
-    // Crea un elemento de tabla para mostrar los posts en formato tabular
-    const table = document.createElement("table");
+		// Solo para efectos de seguir con los requerimientos muestro los datos en una lista.
+		// Inicialmente mostraba los resultados en una tabla.
+		mostrarLista(data, postContainer);
 
-    // Agrega la tabla al contenedor de posts
-    postContainer.appendChild(table);
+		// mostrarTabla(data, postContainer)
+	} catch (error) {
+		// Maneja cualquier error que pueda ocurrir durante la obtención de los datos
+		postContainer.innerHTML = `<h1>Ha ocurrido un error al cargar los datos: ${error}</h1>`;
+	}
+}
 
-    // Crea la fila de encabezado de la tabla con las etiquetas "Id", "Título" y "Cuerpo"
-    table.innerHTML = `<tr>
+const mostrarLista = (data, container) => {
+	// Crea una lista desordenada para mostrar los posts
+	const list = document.createElement("ul");
+
+	// Recorre cada post en los datos obtenidos de la API
+	data.forEach((post) => {
+		// Crea un nuevo elemento de lista para cada post
+		const item = document.createElement("li");
+
+		// Establece el contenido del elemento de lista con los datos del post
+		item.innerHTML = `<p><strong>${post.title}</strong></p>
+        <p>${post.body}</p>`;
+
+		// Agrega el elemento de lista a la lista principal
+		list.appendChild(item);
+	});
+
+	// Agrega la lista al contenedor de posts
+	container.appendChild(list);
+};
+
+const mostrarTabla = (data, container) => {
+	const table = document.createElement("table");
+
+	container.appendChild(table);
+
+	table.innerHTML = `
+        <tr>
+            <th>Id Usuario</th>
             <th>Id</th>
             <th>Título</th>
             <th>Cuerpo</th>
         </tr>`;
 
-    // Recorre cada post en los datos obtenidos de la API
-    data.forEach((post) => {
-      // Crea una nueva fila en la tabla para cada post
-      const row = document.createElement("tr");
+	data.forEach((post) => {
+		const row = document.createElement("tr");
 
-      // Establece el contenido de cada celda de la fila con los datos del post correspondiente
-      row.innerHTML = `<td>${post.id}</td>
+		row.innerHTML = `
+                <td>${post.userId}</td>
+                <td>${post.id}</td>
                 <td>${post.title}</td>
                 <td>${post.body}</td>`;
 
-      // Agrega la fila a la tabla
-      table.appendChild(row);
-    });
-  } catch (error) {
-    // Maneja cualquier error que pueda ocurrir durante la obtención de los datos
-    postContainer.innerHTML = `<h1>Ha ocurrido un error al cargar los datos: ${error}</h1>`;
-  }
-}
+		table.appendChild(row);
+	});
+};
