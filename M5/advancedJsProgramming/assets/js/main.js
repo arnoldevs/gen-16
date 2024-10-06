@@ -212,8 +212,7 @@ let mostrarModal = (animal) => {
 	playSound(animal);
 };
 
-// Funcionalidad de sonido no implementada, 
-/// !!!Se encuentra incompleta!!!!
+// Funcionalidad de sonido no implementada, se encuentra incompleta
 let playSound = (animal) => {
 	const btnModal = document.querySelector(".animal-sound");
 	btnModal.addEventListener("click", () => {
