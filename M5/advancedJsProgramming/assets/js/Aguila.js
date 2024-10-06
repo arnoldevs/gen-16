@@ -5,6 +5,6 @@ export class Aguila extends Animal {
 		super(nombre, edad, imagen, comentarios, sonido);
 	}
 	chillar() {
-		console.log("Aguila chilló");
+		return "Chillido"
 	}
 }

@@ -5,6 +5,6 @@ export class Serpiente extends Animal {
 		super(nombre, edad, imagen, comentarios, sonido);
 	}
 	sisear() {
-		console.log("Serpiente siseo");
+		return "Siseo"
 	}
 }

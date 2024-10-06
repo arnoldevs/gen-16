@@ -5,6 +5,6 @@ export class Leon extends Animal {
 		super(nombre, edad, imagen, comentarios, sonido);
 	}
 	rugir() {
-		console.log("Leon rugió");
+		return "Rugido"
 	}
 }

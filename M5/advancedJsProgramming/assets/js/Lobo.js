@@ -5,6 +5,6 @@ export class Lobo extends Animal {
 		super(nombre, edad, imagen, comentarios, sonido);
 	}
 	aullar() {
-		console.log("Lobo aulló");
+		return "Aullido"
 	}
 }

@@ -12,7 +12,7 @@ const animalesSelect = document.querySelector("#animal");
 const edadSelect = document.querySelector("#edad");
 const comentariosTextArea = document.querySelector("#comentarios");
 const btnRegistrar = document.querySelector("#btnRegistrar");
-const player = document.querySelector("#player");
+const audio = document.querySelector("#player");
 const preview = document.querySelector("#preview");
 const modal = document.querySelector("#exampleModal");
 
@@ -60,6 +60,8 @@ animalesSelect.addEventListener("change", () => {
 	const nombre = animalesSelect.value;
 	const imagen = animales.get(nombre);
 	if (imagen) {
+		// codigo usado para hacer que las imagenes se muestren en la vista previa de manera correcta
+		// encajando en el contenedor.
 		preview.innerHTML = "";
 		preview.classList.remove("default-preview");
 		const img = document.createElement("img");
@@ -96,13 +98,9 @@ const clasesAnimales = {
 
 // Función para crear un nuevo objeto de animal
 function crearAnimal(nombre, edad, imagen, comentarios, sonido) {
-	if (!nombre || !edad || !comentarios) {
-		alert("Por favor, rellene todos los campos");
-		return 1;
-	}
 	const claseAnimal = clasesAnimales[nombre]; // Obtener la clase correspondiente
 	if (!claseAnimal) {
-		alert("Por favor, rellene todos los campos");
+		alert("El animal no existe");
 		return 1;
 	}
 	// Validacion basica de posible SQL injection
@@ -111,7 +109,6 @@ function crearAnimal(nombre, edad, imagen, comentarios, sonido) {
 		alert("Por favor no ingrese caracteres inválidos");
 		return 1;
 	}
-
 	return new claseAnimal(nombre, edad, imagen, comentarios, sonido);
 }
 
@@ -122,6 +119,12 @@ function registrarAnimal() {
 
 	const imagen = animales.get(nombre);
 	const sonido = animalesSelect.value + ".mp3";
+
+	const regex = /Seleccione/
+	if (regex.test(nombre) || regex.test(edad) || !comentarios) {
+		alert("Por favor, rellene todos los campos");
+		return 1;
+	}
 
 	const nuevoAnimal = crearAnimal(nombre, edad, imagen, comentarios, sonido);
 
@@ -159,33 +162,35 @@ let mostrarAnimales = () => {
         <hr />
 
           <img src="assets/imgs/${animal.imagen}" class="img-fluid" alt="${animal.nombre}">
-          <button class="btn btn-primary mt-4" onclick="playSound('${animal.sonido}')">Reproducir sonido</button>
-
+					<hr>
+					<p class="card-subtitle">Haz click para mas detalles</p>
       </div>
     `;
 		animalesDiv.appendChild(card);
 	});
 	if (animalesDiv) {
+		// Se usa la delegacion de eventos para manejar dinamicamente los elementos y optimizar el rendimiento del codigo
 		animalesDiv.addEventListener("click", (event) => {
 			// Obtener la tarjeta que fue clickeada
+			// busca el ancestro más cercano del elemento objetivo
 			const clickedCard = event.target.closest(".animal-card");
+			// Se comprueba que solo se ejecute el código si se ha hecho clic en una tarjeta
+			if (clickedCard) {
+				// Extraer el nombre del animal del título de la tarjeta
+				const animalName =
+					clickedCard.querySelector(".animal-card-title").textContent;
 
-			// Extraer el nombre del animal del título de la tarjeta
-			// Esta parte del codigo esta arrojando un typeError
-			// que no para el funcionamiento de la web por lo menos no a simple vista creo.
-			const animalName =
-				clickedCard.querySelector(".animal-card-title").textContent;
+				// Buscar el animal en el arreglo
+				const animalIndex = animalesRegistrados.findIndex(
+					(animal) => animal.nombre === animalName
+				);
 
-			// Buscar el animal en el arreglo
-			const animalIndex = animalesRegistrados.findIndex(
-				(animal) => animal.nombre === animalName
-			);
+				// Acceder al objeto del animal
+				const animal = animalesRegistrados[animalIndex];
 
-			// Acceder al objeto del animal
-			const animal = animalesRegistrados[animalIndex];
-
-			// Mostrar información detallada en la consola (por ejemplo)
-			mostrarModal(animal);
+				// Mostrar información detallada en la consola (por ejemplo)
+				mostrarModal(animal);
+			}
 		});
 	} else {
 		console.log("No se ha encontrado el elemento");
@@ -201,11 +206,22 @@ let mostrarModal = (animal) => {
     <hr>
     <h2 class="fs-5">Comentarios</h2>
     <p>${animal.comentarios}</p>
+		<hr>
+		<button type="button" class="btn btn-primary animal-sound">Reproducir sonido</button>
   `;
+	playSound(animal);
 };
 
-// La funcionalidad y logica para mostrar el sonido no ha sido implementada
-function playSound(soundFile) {
-	const audio = new Audio(soundFile);
-	audio.play();
-}
+// Funcionalidad de sonido no implementada, 
+/// !!!Se encuentra incompleta!!!!
+let playSound = (animal) => {
+	const btnModal = document.querySelector(".animal-sound");
+	btnModal.addEventListener("click", () => {
+		// No use el atributo controls las etiqueta HTML audio. Solo realice un uso basico y simple.
+    audio.src = `assets/sounds/Rugido.mp3`;
+    // Reproduce el sonido
+    audio.play();
+	})
+
+	
+};
