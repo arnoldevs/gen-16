@@ -5,6 +5,6 @@ export class Oso extends Animal {
 		super(nombre, edad, imagen, comentarios, sonido);
 	}
 	grunir() {
-		return "Grunido"
+		return "Gruñido"
 	}
 }

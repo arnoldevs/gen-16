@@ -29,7 +29,23 @@ const animalModule = (() => {
 			});
 			return animalesMap;
 		} catch (error) {
-			console.error("Error al obtener los animales:", error);
+			console.error("Error al obtener las imagenes de los animales:", error);
+			return new Map();
+		}
+	};
+
+	// Función asíncrona para obtener los sonidos
+	const obtenerSonidos = async () => {
+		try {
+			const response = await fetch("animales.json");
+			const data = await response.json();
+			const animalesMap = new Map();
+			data.animales.forEach((animal) => {
+				animalesMap.set(animal.name, animal.sonido);
+			});
+			return animalesMap;
+		} catch (error) {
+			console.error("Error al obtener los sonidos de los animales:", error);
 			return new Map();
 		}
 	};
@@ -37,11 +53,13 @@ const animalModule = (() => {
 	// Exportamos las funciones que queremos hacer públicas
 	return {
 		obtenerImagenes,
+		obtenerSonidos,
 	};
 })();
 
 // colecciones creadas para almacenar los animales y los registrados
-let animales;
+let imagenesAnimales;
+let sonidosAnimales
 let animalesRegistrados = [];
 
 // Usando las funciones exportadas
@@ -49,7 +67,16 @@ let animalesRegistrados = [];
 animalModule
 	.obtenerImagenes()
 	.then((a) => {
-		animales = a;
+		imagenesAnimales = a;
+	})
+	.catch((error) => {
+		console.error("Error:", error);
+	});
+
+	animalModule
+	.obtenerSonidos()
+	.then((a) => {
+		sonidosAnimales = a;
 	})
 	.catch((error) => {
 		console.error("Error:", error);
@@ -58,7 +85,7 @@ animalModule
 // Evento para actualizar la vista previa cuando se selecciona un animal
 animalesSelect.addEventListener("change", () => {
 	const nombre = animalesSelect.value;
-	const imagen = animales.get(nombre);
+	const imagen = imagenesAnimales.get(nombre);
 	if (imagen) {
 		// codigo usado para hacer que las imagenes se muestren en la vista previa de manera correcta
 		// encajando en el contenedor.
@@ -117,10 +144,10 @@ function registrarAnimal() {
 	const edad = edadSelect.value;
 	const comentarios = comentariosTextArea.value;
 
-	const imagen = animales.get(nombre);
-	const sonido = animalesSelect.value + ".mp3";
+	const imagen = imagenesAnimales.get(nombre);
+	const sonido = sonidosAnimales.get(nombre);
 
-	const regex = /Seleccione/
+	const regex = /Seleccione/;
 	if (regex.test(nombre) || regex.test(edad) || !comentarios) {
 		alert("Por favor, rellene todos los campos");
 		return 1;
@@ -212,15 +239,13 @@ let mostrarModal = (animal) => {
 	playSound(animal);
 };
 
-// Funcionalidad de sonido no implementada, se encuentra incompleta
+// Funcionalidad de implementada de manera incompleta, falta aprovechar los metodos propios internos de las clases.
 let playSound = (animal) => {
 	const btnModal = document.querySelector(".animal-sound");
 	btnModal.addEventListener("click", () => {
 		// No use el atributo controls las etiqueta HTML audio. Solo realice un uso basico y simple.
-    audio.src = `assets/sounds/Rugido.mp3`;
-    // Reproduce el sonido
-    audio.play();
-	})
-
-	
+		audio.src = `assets/sounds/${animal.sonido}`;
+		// Reproduce el sonido
+		audio.play();
+	});
 };
