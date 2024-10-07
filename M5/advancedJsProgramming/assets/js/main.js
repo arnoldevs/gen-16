@@ -59,7 +59,7 @@ const animalModule = (() => {
 
 // colecciones creadas para almacenar los animales y los registrados
 let imagenesAnimales;
-let sonidosAnimales
+let sonidosAnimales;
 let animalesRegistrados = [];
 
 // Usando las funciones exportadas
@@ -73,7 +73,7 @@ animalModule
 		console.error("Error:", error);
 	});
 
-	animalModule
+animalModule
 	.obtenerSonidos()
 	.then((a) => {
 		sonidosAnimales = a;
