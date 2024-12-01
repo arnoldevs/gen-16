@@ -1,0 +1,19 @@
+/* Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Global styles */
+* body {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* Dark theme */
+	background-color: #31363b;
+	color: #fff;
+}
+.title {
+	font-size: 4rem;
+}
+.sub-title {
+	font-size: 1.5rem;
+}
